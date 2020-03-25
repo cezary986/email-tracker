@@ -1,0 +1,10 @@
+<div>
+  <!-- TABELE -->
+  <a *appShowIfLoggedIn="false" mat-button color="primary" [routerLink]="['/' + tablesUrl]">
+    {{ 'navbar.unathorized_user_navigation.tables' | translate }}
+  </a>
+  <!-- TERMINARZ -->
+  <a *appShowIfLoggedIn="false" mat-button color="primary" [routerLink]="['/' + scheduleUrl]">
+    {{ 'navbar.unathorized_user_navigation.schedule' | translate }}
+  </a>
+</div>

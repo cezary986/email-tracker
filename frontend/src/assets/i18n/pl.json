@@ -1,0 +1,24 @@
+{
+    "app_name": "OZTS",
+    "toasts": {
+        "errors": {
+            "app_error": "Coś poszło nie tak...",
+            "403": "Nie masz wystarczających uprawnień do tej czynności",
+            "404": "Szukany zasób nie istnieje",
+            "500": "Coś poszło nie tak po stronie serwera..."
+        }
+    },
+    "email_add": {
+        "title": "Dodaj email",
+        "form": {
+            "title": "Temat",
+            "addressee": "Adresat",
+            "next": "Dalej"
+        }
+    },
+    "common": {
+        "ok": "OK",
+        "save": "Zapisz",
+        "cancel": "Anuluj"
+    }
+}

@@ -1,0 +1,13 @@
+<div class="container row">
+  <input (change)="validate()" [(ngModel)]="value" [max]="max" [min]="min" type="number" class="custom-input-wrapper">
+  <div class="col">
+      <div class="container">
+          <button [disabled]="value + 1 > max" (click)="$event.preventDefault(); increment()" class="increment-button block row">
+              <mat-icon>keyboard_arrow_up</mat-icon>
+          </button>
+          <button [disabled]="value - 1 < min" (click)="$event.preventDefault(); decrement()" class="increment-button block row">
+              <mat-icon>keyboard_arrow_down</mat-icon>
+          </button>
+      </div>
+  </div>
+</div>

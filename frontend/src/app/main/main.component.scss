@@ -1,0 +1,29 @@
+
+@import '../../styles/variables.scss';
+@import '../../styles/mixins/media-queries';
+
+.app-body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: calc(2*#{$default_padding});
+    padding-top: calc(#{$navbar-height} + #{$default_padding}) !important;
+}
+
+.app-container {
+    overflow: unset !important;
+    overflow-y: unset !important;
+    background-color: transparent !important;
+}
+
+.nav-drawer {
+    width: $side-nav-width;
+    height: calc(100vh - #{$navbar-height});
+    position: fixed;
+    margin-top: $navbar-height;
+}
+@include media-phone() {
+    .nav-drawer {
+        margin-top: 56px !important; 
+    } 
+}

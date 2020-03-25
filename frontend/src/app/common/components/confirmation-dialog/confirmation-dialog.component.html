@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>
+  {{ (data.translationsKey + '.title') | translate }}
+</h1>
+<div mat-dialog-content>
+  <p>{{ (data.translationsKey + '.text') | translate }}</p>
+</div>
+<div mat-dialog-actions>
+  <span class="spacer"></span>
+  <button mat-button (click)="dialogRef.close(false)">
+    <ng-container>
+      {{  (data.translationsKey + '.action_negative') | translate }}
+    </ng-container>
+  </button>
+  <button appClickOnEnter (click)="dialogRef.close(true)" mat-button color="primary">
+    <ng-container>
+      {{  (data.translationsKey + '.action_positive') | translate }}
+    </ng-container>
+  </button>
+</div>

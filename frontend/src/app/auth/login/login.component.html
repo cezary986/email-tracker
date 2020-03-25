@@ -1,0 +1,24 @@
+<mat-card class="login-card mat-elevation-z8">
+    <mat-progress-bar class="login-progress-bar" *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+    <h2 class="mat-h1">{{ 'auth.login_form.title' | translate }}</h2>
+    <mat-card-content>
+        <form class="login-form" [formGroup]="loginForm">
+            <!-- LOGIN -->
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>{{ 'auth.login_form.username' | translate }}</mat-label>
+                <input appInitialFocus formControlName="username" required matInput
+                    placeholder="{{ 'auth.login_form.username' | translate }}">
+            </mat-form-field>
+            <!-- HASŁO -->
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>{{ 'auth.login_form.password' | translate }}</mat-label>
+                <input formControlName="password" required matInput
+                    placeholder="{{ 'auth.login_form.password' | translate }}" type="password">
+            </mat-form-field>
+            <button [disabled]="!loginForm.valid" (click)="onSubmit()" class="rounded login-button" mat-raised-button
+                color="primary">{{ 'auth.login_form.submit' | translate }}</button>
+        </form>
+        <!-- KOMUNIKATY O BŁEDACH -->
+        <app-error-alert [show]="hasError" [message]="'auth.login_form.errors.wrong_credentials'"></app-error-alert>
+    </mat-card-content>
+</mat-card>

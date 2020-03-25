@@ -1,0 +1,23 @@
+
+<input 
+  (dateInput)="pickedDate = $event.value; valueChange.emit(prepareValue()); emited = true" 
+  aria-hidden="true" 
+  class="hidden"
+  [min]="min"
+  [max]="max"
+  [matDatepicker]="picker">
+<mat-datepicker #picker></mat-datepicker>
+<div class="hidden" style="display: none;">
+  <div id="{{ timePickerElementId }}" >
+    <ngx-timepicker-field 
+      (timeChanged)="onTimeChange($event)" 
+      id="custom-datepicker-timepicker" 
+      #timepicker
+      [format]="24" 
+      *ngIf="time === true"
+      [defaultTime]="timeStringInitial">
+      
+    </ngx-timepicker-field>
+  </div>
+</div>
+

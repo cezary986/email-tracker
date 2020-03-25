@@ -1,0 +1,33 @@
+<div 
+  class="custom-input-wrapper" 
+  [ngClass]="{'cursor-pointer': !readonly, 'custom-input-invalid': !valid}" 
+  (click)="onActionClick()">
+  <label class="custom-input-label" *ngIf="label" for="{{ name }}">
+    {{ label }}
+    <ng-container *ngIf="required" style="opacity: 75%;">
+       *
+    </ng-container>
+  </label>
+  <input
+    name="{{ name }}" 
+    type="text"
+    [readonly]="true"
+    tabindex="-1"
+    class="hidden"
+    readonly 
+    [value]="value">
+  <div title="{{ value }}" class="custom-input inline-flex">
+    <span class="value">
+      {{ value }}
+    </span>
+  </div>
+
+  <button
+    (click)="onActionClick(); $event.preventDefault(); $event.stopPropagation()"
+    *ngIf="!readonly"
+    mat-icon-button 
+    color="primary" 
+    title="{{ tooltip | translate }}">
+    <mat-icon>{{ icon }}</mat-icon>
+  </button>
+</div>

@@ -1,0 +1,27 @@
+
+
+
+
+
+<ng-container *ngIf="!activated">
+  <span *ngIf="!failure">
+    Do schowka skopiowano niewidzialny kod idź wklej go do treści maila.
+    Następnie wróć tutaj i kliknij przycisk
+  </span>
+  <span *ngIf="failure">
+    Chyba nie wkleiłeś kodu do treści maila. Kod został ponownie skopiowany do schowka.
+    Wklej go do maila wróć tutaj i kliknij przycisk.
+  </span>
+  <div style="margin-top: 16px; text-align: center;">
+    <button (click)="checkActivation()" mat-raised-button color="primary">
+      OK zrobione!
+    </button>
+  </div>
+
+</ng-container>
+
+<ng-container *ngIf="activated">
+  <span>
+    Twój mail jest śledzony!
+  </span>
+</ng-container>

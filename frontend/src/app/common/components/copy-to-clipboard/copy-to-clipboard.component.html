@@ -1,0 +1,8 @@
+<div class="wrapper">
+    <span #content class="mat-body">
+        <ng-content></ng-content>
+    </span>
+    <button title="{{ 'copy_to_clipboard.tooltip' | translate }}" (click)="onCopyToClipboardClick()" mat-icon-button color="primary">
+        <mat-icon>file_copy</mat-icon>
+    </button>
+</div>

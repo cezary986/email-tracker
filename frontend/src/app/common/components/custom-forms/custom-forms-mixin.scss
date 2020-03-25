@@ -1,0 +1,61 @@
+@import "../../../../styles/variables.scss";
+
+@mixin forms($theme) {
+  .custom-input-wrapper {
+    display: inline-block;
+    outline: none !important;
+    border: 1.5px solid transparent;
+
+    padding-left: $default_padding;
+    padding-right: $default_padding;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+
+    transition: border 0.2s;
+
+    &:hover {
+      border: 2px solid rgba(0, 0, 0, 1);
+    }
+
+    input {
+      padding: 1em 0;
+      border: none;
+      outline: none !important;
+    }
+
+    button {
+      margin-right: -16px;
+      border-radius: 4px;
+      height: 41px;
+    }
+  }
+
+  label.custom-label {
+    margin-right: 16px;
+  }
+
+  input.custom-input {
+  }
+
+  .custom-input-invalid {
+    border-color: red;
+    border-width: 2px;
+
+    label {
+      color:  red !important;
+    }
+
+    &:hover {
+      border-color: red !important;
+      border-width: 2px !important;
+    }
+  }
+
+
+  .custom-input-error {
+    display: block;
+    font-size: 75%;
+    padding: 8px 0 8px 16px;
+    color: red;
+  }
+}

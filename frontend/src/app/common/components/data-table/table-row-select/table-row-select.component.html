@@ -1,0 +1,24 @@
+
+<ng-container *ngIf="row !== undefined">
+  <mat-checkbox 
+    *ngIf="tableHelper.selection.multiple && !master"
+    (click)="$event.stopPropagation() && !master"
+    (change)="$event ? tableHelper.selection.toggle(row) : null"
+    [checked]="tableHelper.selection.selection[row[tableHelper.uniqueFieldName]] !== undefined">
+  </mat-checkbox>
+
+  <mat-radio-button
+    color="primary"
+    *ngIf="!tableHelper.selection.multiple && !master"
+    (click)="$event.stopPropagation()"
+    (change)="$event ? tableHelper.selection.toggle(row) : null"
+    [checked]="tableHelper.selection.selection[row[tableHelper.uniqueFieldName]] !== undefined">
+  </mat-radio-button>
+</ng-container>
+
+<mat-checkbox 
+  *ngIf="master && tableHelper.selection.multiple"
+  (change)="$event ? tableHelper.masterToggle() : null"
+  [checked]="tableHelper.isAllSelected()"
+  [indeterminate]="!tableHelper.isAllSelected()">
+</mat-checkbox>

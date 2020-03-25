@@ -1,0 +1,41 @@
+@import '../../../../styles/variables.scss';
+
+$text-color: rgba(0, 0, 0, 0.75);
+
+.search-box {
+  padding-left: $default-padding;
+  background-color: $light-gray;
+  border-radius: 1000px;
+
+  button {
+    color: $text-color !important;
+  }
+
+  
+  input {
+    color: $text-color;
+    width: calc(100% - 40px);
+    border: none !important;
+    outline: none !important;
+    background-color: transparent;
+
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: $text-color;
+      opacity: 1; /* Firefox */
+    }
+    
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: $text-color;
+    }
+    
+    &::-ms-input-placeholder { /* Microsoft Edge */
+      color: $text-color;
+    }
+    
+  }
+}
+
+:host {
+  display: block;
+  margin-bottom: $default-padding;
+}

@@ -1,0 +1,24 @@
+<mat-form-field aria-hidden="true" class="filter-select-form-field">
+  <mat-label>
+    {{ label | translate }}
+  </mat-label>
+  <mat-select #formField (selectionChange)="onSelectionChange($event)">
+    <mat-option *ngFor="let option of _options" [value]="option">
+      {{ option[displayField] }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div 
+  [matTooltip]="value !== null ? value[displayField] : ''" 
+  (click)="onSelectClick()" 
+  matRipple 
+  class="rounded filter-select"
+  [ngClass]="{'table_filters_component-active': value !== null}">
+  <span class="select-inner">
+    <span class="select-value">
+      {{ value !== null ? value[displayField] : (label | translate) }}
+    </span>
+    <mat-icon class="select-arrow">keyboard_arrow_down</mat-icon>
+  </span>
+</div>

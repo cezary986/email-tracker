@@ -1,0 +1,11 @@
+
+
+<div class="rounded filter-select">
+  <mat-checkbox
+    #formField
+    color="primary"
+    (change)="valueChange.emit($event.checked)"
+    [labelPosition]="'before'">
+  {{ label | translate }}
+  </mat-checkbox>
+</div>

@@ -1,0 +1,6 @@
+@import '../../../../styles/variables.scss';
+
+:host {
+  display: table;
+  margin-right: $default_padding;
+}

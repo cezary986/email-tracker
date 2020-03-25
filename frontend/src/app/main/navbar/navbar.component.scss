@@ -1,0 +1,29 @@
+
+.app-bar {
+    position: relative;
+    z-index: 2;
+    background-color: white;
+    position: fixed;
+    top: 0;
+}
+
+.app-loader-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.app-logo {
+    margin-left: 10px;
+    text-decoration: none;
+    color: unset !important;
+}
+
+.logo-icon {
+    position: relative;
+    transform: translateY(15%);
+}
+
+.login-button {
+    min-width: auto;
+}

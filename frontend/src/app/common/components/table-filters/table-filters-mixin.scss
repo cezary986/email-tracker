@@ -1,0 +1,16 @@
+@mixin table-filters-component($theme) {
+  $primary: map-get($theme, primary);
+
+  $primary-color: mat-color($primary, darker);
+
+  .table_filters_component-active {
+    background-color: transparentize($color: $primary-color, $amount: 0.8) !important;
+  }
+
+  app-single-selection-filter {
+    .mat-form-field-wrapper {
+      height: 0;
+      width: 0;
+    }
+  }
+}

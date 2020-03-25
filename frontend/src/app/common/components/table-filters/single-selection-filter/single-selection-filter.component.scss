@@ -1,0 +1,44 @@
+@import '../common.scss';
+
+:host {
+  position: relative;
+  display: inline-flex !important;
+} 
+
+.select-arrow {
+  position: absolute;
+  right: 8px;
+  top: 2px;
+  line-height: 35px;
+}
+
+.select-inner {
+  opacity: 0.7;
+}
+
+.table_filters_component-active {
+  .select-inner {
+    opacity: 1 !important;
+  }
+}
+
+
+.filter-select-form-field {
+  position: absolute;
+  left: 16px;
+  top: 8px;
+  height: 0px;
+  width: 180px;
+  max-width: 196px;
+  opacity: 0;
+}
+
+.select-value {
+  display: inline-block;
+  max-width: 88%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+  top: 2px;
+}

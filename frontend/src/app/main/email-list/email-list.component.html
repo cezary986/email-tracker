@@ -1,0 +1,26 @@
+
+<button 
+  (click)="onAddEmailClick()"
+  title="{{ 'email_add.title' | translate }}" 
+  mat-fab class="add-email-btn">
+  <mat-icon>add</mat-icon>
+</button>
+
+
+<div class="card-header" style="margin: 26px;">
+  <h2 class="mat-h1">
+      Śledzone maile
+  </h2>
+  <span class="spacer"></span>
+</div>
+<mat-card>
+  <app-search-box 
+      placeholder="Szukaj..." 
+      (queryChange)="searchQuery = $event">
+  </app-search-box>
+  <app-email-list-table
+      class="margin-top"
+      [elements]="emails" 
+      [searchQuery]="searchQuery">
+  </app-email-list-table>
+</mat-card>

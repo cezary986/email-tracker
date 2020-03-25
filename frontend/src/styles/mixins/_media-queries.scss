@@ -1,0 +1,37 @@
+
+$phone-width: 640px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$desktop-big-height: 800px;
+$desktop-big-width: 1920px;
+
+/*
+Mixiny dla troche wygodniejszej obsługi media queries
+*/
+
+@mixin media-phone {
+  @media (min-width: 0) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin media-tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin media-desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin media-desktop-big {
+  @media (min-height: #{$desktop-big-height}) {
+    @content;
+  }
+  @media (min-width: #{$desktop-big-width}) {
+    @content;
+  }
+}

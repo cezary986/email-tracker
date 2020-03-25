@@ -1,0 +1,7 @@
+<div class="mat-body full-width search-box rounded">
+    <input class="mat-body" type="text" [placeholder]="placeholder" (keyup)="queryChange.emit($event.target.value)" [(ngModel)]="query">
+    <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="onClearButtonClick()">
+        <mat-icon *ngIf="query !== null && this.query.length > 0">close</mat-icon>
+        <mat-icon *ngIf="query === null || this.query.length === 0" >search</mat-icon>
+    </button>
+</div>

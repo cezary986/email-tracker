@@ -1,0 +1,67 @@
+<h1 mat-dialog-title>
+  <ng-container *ngIf="data.mode === 'add'">
+      {{ 'email_add.title' | translate }}
+  </ng-container>
+  
+</h1>
+<div mat-dialog-content>
+  <!-- FORMULARZ -->
+  <form *ngIf="step === 'form'" [formGroup]="form">
+      <!-- TYTUŁ -->
+      <mat-form-field class="full-width" appearance="outline">
+          <mat-label>
+              {{ 'email_add.form.title' | translate }}
+          </mat-label>
+          <input formControlName="title" required matInput>
+          <mat-error *ngIf="form.controls.title.invalid">
+              <app-form-error [errors]="form.controls.title.errors"></app-form-error>
+          </mat-error>
+      </mat-form-field>
+
+      <!-- ADRESAT -->
+      <mat-form-field class="full-width" appearance="outline">
+          <mat-label>
+              {{ 'email_add.form.addressee' | translate }}
+          </mat-label>
+          <input formControlName="addressee" required matInput>
+          <mat-error *ngIf="form.controls.addressee.invalid">
+              <app-form-error [errors]="form.controls.addressee.errors"></app-form-error>
+          </mat-error>
+      </mat-form-field>
+  </form>
+
+  <!-- POTWIERDZENIE -->
+  <app-email-created-confirmation
+    *ngIf="step === 'confirmation'"
+    [email]="createdEmail"
+    (success)="confirmationSuccess = true">
+  </app-email-created-confirmation>
+</div>
+<div *ngIf="step === 'form'" mat-dialog-actions>
+  <span class="spacer"></span>
+  <button mat-button (click)="onCancelClick()">
+      <ng-container *ngIf="data.mode === 'add'">
+          {{ 'common.cancel' | translate }}
+      </ng-container>
+      <ng-container *ngIf="data.mode === 'edit'">
+          {{ 'common.cancel' | translate }}
+      </ng-container>
+  </button>
+  <button appClickOnEnter (click)="onSubmit()" [disabled]="!form.touched || !form.valid" mat-button color="primary">
+      <ng-container *ngIf="data.mode === 'add'">
+          {{ 'email_add.form.next' | translate }}
+      </ng-container>
+      <ng-container *ngIf="data.mode === 'edit'">
+          {{ 'email_add.form.next' | translate }}
+      </ng-container>
+  </button>
+</div>
+
+<div *ngIf="step === 'confirmation'" mat-dialog-actions>
+    <span class="spacer"></span>
+    <button *ngIf="confirmationSuccess" appClickOnEnter (click)="onOkClick()" [disabled]="!form.touched || !form.valid" mat-button color="primary">
+        <ng-container *ngIf="data.mode === 'add'">
+            {{ 'common.ok' | translate }}
+        </ng-container>
+    </button>
+  </div>

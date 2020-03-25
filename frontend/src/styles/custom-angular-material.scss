@@ -1,0 +1,203 @@
+@import "~@angular/material/theming";
+@import "~@angular/cdk/overlay-prebuilt.css";
+@import "./variables.scss";
+
+// Define a mixin that accepts a theme and outputs the theme-specific styles.
+@mixin custom-angular-material($theme) {
+  // Extract the palettes you need from the theme definition.
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+  .mat-button-base.rounded {
+    border-radius: 1000px !important;
+  }
+
+  .rounded {
+    border-radius: 1000px !important;
+  }
+
+  .notifier__notification {
+    background-color: white;
+  }
+
+  .notifier__notification--error {
+    color: white;
+    background-color: mat-color($warn);
+    .notifier__notification-button-icon {
+      fill: rgba(
+        $color: (
+          white
+        ),
+        $alpha: 0.85
+      ) !important;
+    }
+  }
+
+  .notifier__notification--success {
+    background-color: mat-color($primary);
+    color: white !important;
+    .notifier__notification-button-icon {
+      fill: rgba(
+        $color: (
+          white
+        ),
+        $alpha: 0.85
+      ) !important;
+    }
+  }
+
+  .notifier__notification--info {
+    background-color: white;
+  }
+
+  .color-primary {
+    color: mat-color($primary);
+  }
+
+  .color-accent {
+    color: mat-color($accent);
+  }
+
+  .color-warn {
+    color: mat-color($warn);
+  }
+
+  .bg-warn {
+    background-color: mat-color($warn) !important;
+  }
+
+  .bg-primary {
+    background-color: mat-color($primary) !important;
+  }
+
+  mat-form-field.full-width {
+    width: 100% !important;
+  }
+
+  .clickable {
+    transition: all 0.2s;
+    cursor: pointer;
+    &:hover {
+      background-color: lighten(mat-color($primary), 32%) !important;
+    }
+  }
+
+  .active {
+    background-color: lighten(mat-color($primary), 35%) !important;
+  }
+
+  .alert-info {
+    @include alert(mat-color($primary));
+  }
+
+  .alert-warning {
+    @include alert(mat-color($warn));
+  }
+
+  .link {
+    color: mat-color($primary);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+@mixin alert($color) {
+  background-color: lighten($color, 25%);
+  border-radius: 10px;
+  color: darken($color, 30);
+  padding: $default_padding;
+  padding-top: 10px;
+  line-height: 160% !important;
+}
+
+.mat-column-actions {
+  text-align: right !important;
+}
+
+.flat-card {
+  padding: $default_padding;
+  border-radius: 10px;
+  background-color: $light-gray;
+  border: 1px solid;
+  border-color: #d5d9e0;
+}
+
+.right-upper-corner {
+  position: absolute !important;
+  right: 10px;
+  top: 8px;
+}
+
+
+thead {
+  background-color: $light-gray !important;
+}
+
+.custom-expansion-panel.mat-expanded {
+  margin-bottom: 16px;
+  margin-top: 16px;
+  border-radius: 4px !important;
+}
+
+.custom-expansion-panel {
+  border-radius: 0 !important;
+}
+
+.mat-calendar-table-header {
+  background-color: transparent !important;
+}
+
+.ngx-timepicker {
+  margin: auto;
+}
+
+// FIXME Nie wiedzieć czemu timepicker nie wyswietla się - temat na stacku wydaje się martwy
+.ngx-material-timepicker-toggle {
+  display: none !important;
+}
+
+.mat-datepicker-content .mat-calendar {
+  height: auto !important;
+}
+
+.mat-button-base {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.mat-tab-list {
+  margin: auto !important;
+  flex-grow: initial !important;
+}
+
+.mat-tab-label {
+  border-radius: 20px !important;
+  height: calc(48px + 33px) !important;
+  top: 30px !important;
+}
+
+.mat-tab-label-content {
+  position: relative;
+  top: -13px !important;
+}
+
+.card-tabs-header {
+  margin-top: -27px !important;
+}
+
+.tab-label {
+  display: flex;
+  align-items: center;
+}
+
+.mat-tab-body-content {
+  overflow: hidden !important;
+}
+
+.mat-dialog-container {
+  min-width: 50vw !important;
+}

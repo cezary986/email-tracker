@@ -1,0 +1,14 @@
+
+
+#custom-datepicker-timepicker {
+  position: relative;
+  top: 16px;
+  display: flex;
+  margin: auto;
+}
+
+:host {
+  width: 0 !important;
+  height: 0 !important;
+  visibility: hidden;
+}

@@ -1,0 +1,164 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./styles/app-theme.scss";
+@import "../node_modules/angular-notifier/styles/core.scss";
+@import "../node_modules/angular-notifier/styles/themes/theme-material.scss";
+@import "./styles/variables.scss";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+body,
+html {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+notifier-container {
+  position: absolute;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.hiden-checkbox {
+  mat-pseudo-checkbox {
+    display: none !important;
+  }
+}
+
+.card-header {
+  display: flex;
+
+  button, a {
+    position: relative;
+    top: -4px;
+    height: 100% !important;
+  }
+}
+
+.card-table {
+  width: 100% !important;
+}
+
+.empty-table {
+  width: 100%;
+  text-align: center !important;
+  opacity: 0.75;
+  margin-top: 10px;
+}
+
+.list-loader {
+  display: block;
+  margin: 16px auto 16px auto;
+}
+
+mat-icon.text-aligned {
+  transform: translateY(25%);
+}
+
+.help-icon {
+  cursor: pointer;
+}
+
+.page-actions-container {
+  margin-top: 20px;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.relative {
+  position: relative;
+}
+
+.inline-flex {
+  display: inline-flex !important;
+}
+
+.inline-block {
+  display: inline-block !important;
+}
+
+.margin-left {
+  margin-left: $default-padding !important;
+}
+
+.margin-right {
+  margin-right: $default-padding !important;
+}
+
+.margin-top {
+  margin-top: $default-padding !important;
+}
+
+.margin-bottom {
+  margin-bottom: $default-padding !important;
+}
+
+.hidden {
+  width: 0 !important;
+  height: 0 !important;
+  max-width: 0 !important;
+  max-height: 0 !important;
+  opacity: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.table-container {
+  overflow: auto;
+  overflow-y: hidden;
+  border-radius: 4px;
+}
+
+.input-margin {
+  display: block;
+  padding-bottom: 1.34375em;
+}
+
+.input-margin-top {
+  margin-top: 20px;
+}
+
+.summary-row {
+  background-color: $light-blue;
+  font-weight: bold;
+}
+
+.summary-row-hidden {
+  tfoot {
+    .summary-row {
+      display: none;
+    }
+  }
+}
+
+.row {
+  margin: 0 !important;
+}
+
+.card-form {
+  padding: $default_padding 0 $default_padding 0 !important;
+}
+
+.card-form-button-wrapper {
+  margin-top: $default_padding;
+  display: flex;
+  padding: 0 30px 0 30px;
+}

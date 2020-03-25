@@ -1,0 +1,47 @@
+
+.custom-input-wrapper {
+  position: relative;
+  display: block;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  width: 100%;
+}
+
+:host {
+  width: 100%;
+  min-width: 235px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.custom-input {
+  width: calc(100% - 54px) !important;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.custom-input-label {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  transform: translateY(-50%);
+  padding: 0 5px 0 5px;
+  background-color: white;
+  left: 8px;
+}
+
+button {
+  height: 59px;
+  width: 55px;
+}
+
+.value {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 11px;
+}

@@ -1,0 +1,18 @@
+<ng-container *ngIf="(profile | async) !== null">
+    <ngx-avatar [matMenuTriggerFor]="userPopover" matTooltip="{{ (profile | async).username }}"
+        [matTooltipPosition]="'below'" name="{{ (profile | async).username }}" size="40">
+    </ngx-avatar>
+</ng-container>
+
+<mat-menu #userPopover="matMenu" class="mat-elevation-z8 popup">
+    <!-- ZMIANA HASŁA -->
+    <button (click)="onChangePasswordClick()" mat-menu-item>
+        <mat-icon>account_box</mat-icon>
+        {{ 'user_popup.change_password' | translate }}
+    </button>
+    <!-- WYLOGOWANIE -->
+    <button (click)="onLogoutClick()" mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        {{ 'user_popup.logout' | translate }}
+    </button>
+</mat-menu>
